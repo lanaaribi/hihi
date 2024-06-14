@@ -35,11 +35,11 @@ document.getElementById('loveForm').addEventListener('submit', function(event) {
         console.log(`Compatibility: ${randomCompatibility}%`);  // This will print the random compatibility percentage
 
         if (randomCompatibility > 80) {
-            feedbackDiv.innerHTML = "Great match!";
+            feedbackDiv.innerHTML = "Mais qu'est-ce que c'est que ce chantier ?!"";
         } else if (randomCompatibility > 50) {
-            feedbackDiv.innerHTML = "Not bad!";
+            feedbackDiv.innerHTML = "Ça ne casse pas trois pattes à un canard !";
         } else {
-            feedbackDiv.innerHTML = "Maybe not this time.";
+            feedbackDiv.innerHTML = "C'est de la merde, Astérix !";
         }
     }
 

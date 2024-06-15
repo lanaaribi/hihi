@@ -14,8 +14,8 @@ document.getElementById('loveForm').addEventListener('submit', function(event) {
     const specialName1 = "lana"; // First special name
     const specialName2 = "adrien"; // Second special name
 
-    let rounds = parseInt(roundsDiv.textContent);
-    let perfectMatches = parseInt(perfectMatchesDiv.textContent);
+    let rounds = parseInt(roundsDiv.textContent) || 0; // Default to 0 if NaN
+    let perfectMatches = parseInt(perfectMatchesDiv.textContent) || 0; // Default to 0 if NaN
 
     rounds++;
     console.log(`Rounds: ${rounds}`);  // This will print the number of rounds
@@ -35,7 +35,7 @@ document.getElementById('loveForm').addEventListener('submit', function(event) {
         console.log(`Compatibility: ${randomCompatibility}%`);  // This will print the random compatibility percentage
 
         if (randomCompatibility > 80) {
-            feedbackDiv.innerHTML = "Mais qu'est-ce que c'est que ce chantier ?!"";
+            feedbackDiv.innerHTML = "Mais qu'est-ce que c'est que ce chantier ?";
         } else if (randomCompatibility > 50) {
             feedbackDiv.innerHTML = "Ça ne casse pas trois pattes à un canard !";
         } else {
@@ -54,5 +54,7 @@ document.getElementById('resetButton').addEventListener('click', function() {
     document.getElementById('name2').value = '';
     document.getElementById('result').innerHTML = '';
     document.getElementById('feedback').innerHTML = '';
+    document.getElementById('rounds').textContent = '0';  // Reset rounds
+    document.getElementById('perfectMatches').textContent = '0';  // Reset perfect matches
     console.log('Game reset');  // This will print when the game is reset
 });
